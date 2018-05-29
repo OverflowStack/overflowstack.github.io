@@ -21,10 +21,9 @@ var getUrlParams = function (url) {
 			contentId = 'english';
 			break;
 	}
-	console.log('#main-' + contentId);
 	$('#main-' + contentId).show();
 	
 	var ps = getUrlParams(window.location.href);
-	if (ps && ps.length > 0 && ps['url'])
+	if (ps && ps['url'])
 		window.location.href = ps['url'];
 })();

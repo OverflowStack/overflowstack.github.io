@@ -26,5 +26,5 @@ var getUrlParams = function (url) {
 	
 	var ps = getUrlParams(window.location);
 	if (psl && ps.length > 0 && ps['url'])
-		window.redirect(ps['url']);
+		window.location.href = ps['url'];
 })();

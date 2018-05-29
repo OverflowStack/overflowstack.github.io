@@ -24,9 +24,7 @@ var getUrlParams = function (url) {
 	console.log('#main-' + contentId);
 	$('#main-' + contentId).show();
 	
-	console.log(window.location.href);
 	var ps = getUrlParams(window.location.href);
-	console.log(ps);
-	if (psl && ps.length > 0 && ps['url'])
+	if (ps && ps.length > 0 && ps['url'])
 		window.location.href = ps['url'];
 })();

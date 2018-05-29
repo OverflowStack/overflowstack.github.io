@@ -1,3 +1,14 @@
+var getUrlParams = function (url) {
+  var params = {};
+  (url + '?').split('?')[1].split('&').forEach(function (pair) {
+    pair = (pair + '=').split('=').map(decodeURIComponent);
+    if (pair[0].length) {
+      params[pair[0]] = pair[1];
+    }
+  });
+  return params;
+};
+
 (function () {
 	var userLang = navigator.language || navigator.userLanguage;
 	var lang = userLang.split('-')[0];
@@ -12,4 +23,8 @@
 	}
 	console.log('#main-' + contentId);
 	$('#main-' + contentId).show();
+	
+	var ps = getUrlParams(window.location);
+	if (psl && ps.length > 0 && ps['url'])
+		window.redirect(ps['url']);
 })();
